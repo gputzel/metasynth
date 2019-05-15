@@ -74,4 +74,12 @@ rule combined_reads_reverse:
     shell:
         "cat {input} > {output}"
 
-
+rule metaphlan:
+    input:
+        forward="output/simulated_reads/{sample}_R1.fastq",
+        reverse="output/simulated_reads/{sample}_R2.fastq"
+    output:
+        profile="output/metaphlan2/profiles/{sample}.txt"
+    threads: 4
+    shell:
+        "cat {input.forward} {input.reverse} | metaphlan2.py --input_type fastq --no_map --tmp_dir tmp --nproc {threads} > {output.profile}"
