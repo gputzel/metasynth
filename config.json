@@ -1,11 +1,17 @@
 {
-    "organisms":
+    "reference_genomes":
     {
         "EscherichiaColiK12":{
             "genome_URL":"ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/005/845/GCF_000005845.2_ASM584v2/GCF_000005845.2_ASM584v2_genomic.fna.gz"
         },
         "ClostridiumASF356":{
             "genome_path":"resources/genomes/GCF_000364165.1_Clos_bact_ASF356_V1_genomic.fna.gz"
+        }
+    },
+    "metagenomes":{
+        "SampleA":{
+            "EC1":{"reference_genome":"EscherichiaColiK12","reads":"100"},
+            "CL1":{"reference_genome":"ClostridiumASF356","reads":"100"}
         }
     }
 }
